@@ -3,20 +3,33 @@
   <head>
     <meta charset="utf-8" />
 
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/styles.css"/>
+
     <title>Starter Pokemon Evolutions</title>
   </head>
 
   <body>
-    <table>
-      <thead>
+
+    <nav class="red accent-4 z-depth-3">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">POKEDEX</a>
+      </div>
+    </nav>
+
+    <table class="centered bordered highlight z-depth-3">
+      <thead class="red lighten-2">
         <tr>
-          <td>Sprite</td>
-          <td>Name</td>
-          <td>Pokedex Number</td>
+          <th>Sprite</th>
+          <th>Name</th>
+          <th>Pokedex Number</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="grey lighten-5">
         <% data.forEach((pokemon) => { %>
           <tr>
             <td>
@@ -30,5 +43,8 @@
         <% }); %>
       </tbody>
     </table>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
   </body>
 </html>

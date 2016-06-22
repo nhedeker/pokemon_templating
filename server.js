@@ -6,12 +6,15 @@ const port = process.env.PORT || 8000;
 
 const path = require('path');
 
+const publicPath = path.join(__dirname, 'public');
+
 const pokemonList = require('./utils/pokemon_list');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // INSERT STATIC MIDDLEWARE FUNCTION HERE
+app.use(express.static(publicPath));
 
 app.get('/pokemon', (_req, res) => {
   res.render('pages/index', {
