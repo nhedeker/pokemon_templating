@@ -10,33 +10,28 @@
     <link type="text/css" rel="stylesheet" href="/css/styles.css"/>
 
 
-    <title><%= data.name %></title>
+    <title>Error</title>
   </head>
 
   <body>
     <% include ../partials/navbar %>
 
-    <table class="centered bordered grey lighten-5 z-depth-3">
-      <thead class="red lighten-1">
-        <tr>
-          <th>Sprite</th>
-          <th>Type</th>
-          <th>Evolves From</th>
-          <th>Pokedex Number</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>
-            <img src="<%= data.image_url %>" alt="<%= data.name %>" />
-          </td>
-          <td><%= data.type %></td>
-          <td><%= data.evolves_from %></td>
-          <td><%= data.id %></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container">
+      <div class="row">
+        <div class="col s10 offset-s1">
+          <div class="card z-depth-3">
+            <div class="errorImg grey lighten-5">
+              <img src="/css/psyduck-2.gif">
+            </div>
+            <div class="card-content grey-text text-lighten-5 red darken-1">
+              <h3><%= error %> Error:</h3>
+              <p><%= message %></p>
+              <br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>

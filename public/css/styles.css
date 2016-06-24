@@ -7,3 +7,37 @@ table {
 body {
   background-image: url(pokemon.jpg);
 }
+
+.row {
+  display: flex;
+}
+
+.card {
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3, p {
+  text-align: center;
+}
+
+p {
+  font-size: 30px;
+}
+
+.errorImg {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.errorImg > img {
+  width: 300px;
+  height: 300px;
+}

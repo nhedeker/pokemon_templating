@@ -46,14 +46,19 @@ app.get('/pokemon/:id', (req, res, next) => {
   });
 });
 
-app.use((_req, res) => {
-  res.sendStatus(404);
+app.use(function(_req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-app.use((err, _req, res, _next) => {
-  console.error(err.stack);
-  res.sendStatus(500);
-});
+app.use(function(err, _req, res, _next) {
+    res.status(err.status || 500);
+    res.render('pages/error', {
+      message: err.message,
+      error: err.status
+    });
+  });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}, yo!`);
